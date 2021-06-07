@@ -1,0 +1,82 @@
+<!--
+  Gestor Financeiro (cada 1,5)
+  
+  1.Deve ser possível definir, “armazenar” e editar o salário ganho por mês
+  
+  2.Deve ser possível criar e “armazenar” uma compra
+  
+  3.Permitir a exibição das compras do mês
+  
+  4.Permitir definir uma categoria para a compra
+  
+  5.Permitir excluir uma compra
+  
+  6.Exibir o total gasto e o restante no mês
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MoBank</title>
+
+</head>
+<body>
+
+  <!-- Header -->
+  <mat-toolbar color="primary" role="heading">
+    <mat-toolbar-row>
+
+      <button mat-icon-button (click)="sidenav.toggle();">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <h1>MoBank</h1>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+
+    <!-- Nav -->
+    <mat-sidenav #sidenav mode="side" opened>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/payments">
+          <mat-icon mat-list-icon>payments</mat-icon>
+          <div mat-line>Salário</div>
+        </a>
+        <a mat-list-item routerLink="/shopping">
+          <mat-icon mat-list-icon>shopping_cart</mat-icon>
+          <div mat-line>Compras</div>
+        </a>
+        <a mat-list-item routerLink="/analytics">
+          <mat-icon mat-list-icon>analytics</mat-icon>
+          <div mat-line>Relatório</div>
+        </a>
+        <a mat-list-item routerLink="/about">
+          <mat-icon mat-list-icon>info</mat-icon>
+          <div mat-line>Sobre o app</div>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    
+    <!-- Main -->
+    <mat-sidenav-content>
+      <main style="min-height: calc(100vh - 64px);">
+
+        <!-- Component -->
+        <div class="container">
+          <mat-card>
+            <router-outlet></router-outlet>
+          </mat-card>
+        </div>
+        
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+  
+</body>
+</html>
