@@ -8,7 +8,7 @@ import { Payment } from '../models/payment';
   providedIn: 'root'
 })
 export class PaymentService {
-  url = environment.baseUrl + 'payments';
+  url = `${environment.baseUrl}payments`;
 
   constructor(private http: HttpClient) { }
 

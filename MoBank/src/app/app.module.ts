@@ -21,6 +21,8 @@ import { PaymentsComponent } from './views/payments/payments.component';
 import { PurchasesComponent } from './views/purchases/purchases.component';
 import { CategoriesComponent } from './views/categories/categories.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -52,7 +54,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatIconModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

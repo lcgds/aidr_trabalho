@@ -5,7 +5,15 @@
       "id": 1,
       "month": 6,
       "year": 2021,
+      "description": "Salário",
       "value": 1500
+    },
+    {
+      "id": 2,
+      "month": 6,
+      "year": 2021,
+      "description": "Freelance",
+      "value": 500
     }
   ],
 
