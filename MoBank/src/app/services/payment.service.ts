@@ -36,7 +36,7 @@ export class PaymentService {
     if (!id) {
       return EMPTY;
     } else {
-      return this.http.delete(this.url + id)
+      return this.http.delete(this.url + '/' + id)
     }
   }
 }

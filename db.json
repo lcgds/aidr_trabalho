@@ -13,13 +13,6 @@
       "description": "Freelance",
       "value": 500,
       "id": 2
-    },
-    {
-      "month": "Abril",
-      "year": 1900,
-      "description": "Teste",
-      "value": 1,
-      "id": 3
     }
   ],
   "purchases": [

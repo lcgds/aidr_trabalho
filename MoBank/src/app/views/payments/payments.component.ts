@@ -1,8 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Payment } from 'src/app/models/payment';
 import { PaymentService } from 'src/app/services/payment.service';
+import { ConfirmComponent } from '../dialogs/confirm/confirm.component';
+import { Confirmation } from '../dialogs/confirm/confirmation';
 
 @Component({
   selector: 'app-payments',
@@ -20,7 +23,7 @@ export class PaymentsComponent implements OnInit {
   editMode = false;
 
 
-  constructor(private paymentService: PaymentService, private snackBar: MatSnackBar) { }
+  constructor(private paymentService: PaymentService, private snackBar: MatSnackBar, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.list();
@@ -107,14 +110,27 @@ export class PaymentsComponent implements OnInit {
 
     this.selectedPayment = {
       id: undefined,
-      month: "Janeiro",
-      year: 1900,
+      month: "Junho",
+      year: 2021,
       description: '',
       value: 1
     }
   }
 
-  delete(): void {
-    
+  delete(idToDelete: number): void {
+    const confirmation = this.dialog.open(ConfirmComponent, {
+      data: {
+        id: idToDelete,
+        answer: false
+      }
+    });
+
+    confirmation.afterClosed().subscribe((event: Confirmation) => {
+      if (event && event.answer) {
+        this.paymentService.delete(idToDelete).subscribe();
+        this.getTotal();
+        this.list();
+      } 
+    });
   }
 }

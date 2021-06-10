@@ -1,6 +1,6 @@
 <h3 mat-dialog-title>Excluir este item?</h3>
 
 <div mat-dialog-actions>
-    <button color="warn">EXCLUIR</button>
-    <button color="basic">CANCELAR</button>
+    <button mat-button color="basic" (click)="cancel()">CANCELAR</button>
+    <button mat-button color="warn" (click)="confirm()">EXCLUIR</button>
 </div>
