@@ -5,3 +5,13 @@ table {
 tr.mat-footer-row {
     font-weight: bold;
 }
+
+button.button-aside {
+    margin-left: 1rem;
+}
+
+.faButton {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+}

@@ -1,22 +1,27 @@
 {
-
   "payments": [
     {
-      "id": 1,
-      "month": 6,
+      "month": "Junho",
       "year": 2021,
       "description": "Salário",
-      "value": 1500
+      "value": 1500,
+      "id": 1
     },
     {
-      "id": 2,
-      "month": 6,
+      "month": "Junho",
       "year": 2021,
       "description": "Freelance",
-      "value": 500
+      "value": 500,
+      "id": 2
+    },
+    {
+      "month": "Abril",
+      "year": 1900,
+      "description": "Teste",
+      "value": 1,
+      "id": 3
     }
   ],
-
   "purchases": [
     {
       "id": 1,
@@ -25,5 +30,4 @@
       "category": "Lazer"
     }
   ]
-
 }

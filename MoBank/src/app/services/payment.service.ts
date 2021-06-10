@@ -28,7 +28,7 @@ export class PaymentService {
     if (!payment) {
       return EMPTY;
     } else {
-      return this.http.patch<Payment>(this.url + payment.id, payment);
+      return this.http.patch<Payment>(this.url + '/' + payment.id, payment);
     }
   }
 

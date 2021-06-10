@@ -21,7 +21,15 @@ import { PaymentsComponent } from './views/payments/payments.component';
 import { PurchasesComponent } from './views/purchases/purchases.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { ConfirmComponent } from './views/dialogs/confirm/confirm.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
+
 
 
 
@@ -32,7 +40,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     AboutComponent,
     AnalyticsComponent,
     PaymentsComponent,
-    PurchasesComponent
+    PurchasesComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +64,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatCardModule,
     MatTableModule,
     MatSnackBarModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

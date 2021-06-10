@@ -23,3 +23,11 @@ body {
 mat-nav-list {
   width: 256px;
 }
+
+hr {
+  margin: 24px 0;
+}
+
+section {
+  margin: 48px 0;
+}

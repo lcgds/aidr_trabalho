@@ -10,9 +10,9 @@
 */
 
 export interface Payment {
-    id?: number;
-    month: number;
+    month: string;
     year: number;
     description: string;
     value: number;
+    id?: number;
 } 
