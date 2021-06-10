@@ -16,9 +16,11 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 
 import { AboutComponent } from './views/about/about.component';
-import { ShoppingComponent } from './views/shopping/shopping.component';
 import { AnalyticsComponent } from './views/analytics/analytics.component';
 import { PaymentsComponent } from './views/payments/payments.component';
+import { PurchasesComponent } from './views/purchases/purchases.component';
+import { CategoriesComponent } from './views/categories/categories.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -27,19 +29,24 @@ import { PaymentsComponent } from './views/payments/payments.component';
   declarations: [
     AppComponent,
     AboutComponent,
-    ShoppingComponent,
     AnalyticsComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    PurchasesComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
 
+    //Angular
     FormsModule,
-
+    HttpClientModule,
+    
+    //CDK
     LayoutModule,
 
+    //Material Design
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,

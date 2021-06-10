@@ -1,0 +1,28 @@
+{
+
+  "payments": [
+    {
+      "id": 1,
+      "month": 6,
+      "year": 2021,
+      "value": 1500
+    }
+  ],
+
+  "purchases": [
+    {
+      "id": 1,
+      "name": "Aluguel de Bike",
+      "value": 20,
+      "category": 1
+    }
+  ],
+
+  "categories ": [
+    {
+    "id": 1,
+    "name": "Lazer"
+    }
+  ]
+
+}
