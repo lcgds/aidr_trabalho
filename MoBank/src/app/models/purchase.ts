@@ -1,6 +1,6 @@
 export interface Purchase{
     id?: number;
     name: string;
-    value: string;
+    value: number;
     category: string;
 }

@@ -43,6 +43,16 @@ export class PurchasesComponent implements OnInit {
     );
   }
 
+  getTotal(): number {
+    let total = 0;
+
+    this.purchases.forEach(element => {
+      total += element.value;
+    });
+
+    return total;
+  }
+
   private handleServiceError(error: HttpErrorResponse): void{ 
         console.log(error);
         this.showSnackbar(error.statusText);
@@ -93,7 +103,7 @@ export class PurchasesComponent implements OnInit {
     this.selectedPurchase = {
       id: undefined,
       name: '',
-      value: '',
+      value: 0,
       category: ''
     };
   }

@@ -42,6 +42,7 @@
 			<mat-cell *matCellDef="let purchase">
 				{{purchase.category}}	
 			</mat-cell>
+			<div mat-footer-cell *matFooterCellDef>{{ getTotal() | currency}}</div>
 		</ng-container>
 
 		<ng-container matColumnDef="actions">
