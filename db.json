@@ -22,14 +22,7 @@
       "id": 1,
       "name": "Aluguel de Bike",
       "value": 20,
-      "category": 1
-    }
-  ],
-
-  "categories ": [
-    {
-    "id": 1,
-    "name": "Lazer"
+      "category": "Lazer"
     }
   ]
 
