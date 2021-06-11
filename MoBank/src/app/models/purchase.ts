@@ -1,10 +1,6 @@
-/*
-    "purchases": [
-        {
-        "id": 1,
-        "name": "Aluguel de Bike",
-        "value": 20,
-        "category": 1
-        }
-    ]
-*/
+export interface Purchase{
+    id?: number;
+    name: string;
+    value: number;
+    category: string;
+}
