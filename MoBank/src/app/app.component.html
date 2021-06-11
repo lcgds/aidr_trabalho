@@ -45,7 +45,7 @@
   <mat-sidenav-container>
 
     <!-- Nav -->
-    <mat-sidenav #sidenav [mode]="screenW > 1024 ? 'side' : 'over'" [opened]="screenW > 768 ? 'true' : 'false'">
+    <mat-sidenav #sidenav [mode]="screenW > 1024 ? 'side' : 'over'" [opened]="screenW > 1024 ? 'true' : 'false'">
       <mat-nav-list>
         <a mat-list-item routerLink="/payments">
           <mat-icon mat-list-icon>payments</mat-icon>
