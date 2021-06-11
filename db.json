@@ -6,21 +6,14 @@
       "description": "Salário",
       "value": 1500,
       "id": 1
-    },
-    {
-      "month": "Junho",
-      "year": 2021,
-      "description": "Freelance",
-      "value": 500,
-      "id": 2
     }
   ],
   "purchases": [
     {
-      "name": "Aluguel de Bike",
-      "value": 20,
+      "name": "Bicicleta",
+      "value": 1000,
       "category": "Lazer",
-      "id": 1
+      "id": 2
     }
   ]
 }

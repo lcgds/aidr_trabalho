@@ -6,7 +6,7 @@
   <mat-icon>add</mat-icon>
 </button>
 
-<div>
+<section>
   <mat-table [dataSource]="purchases">
 
     <ng-container matColumnDef="id">
@@ -45,7 +45,7 @@
         {{ purchase.value | currency }}
       </mat-cell>
 
-      <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+      <mat-footer-cell *matFooterCellDef>{{ getTotal() | currency }}</mat-footer-cell>
 
     </ng-container>
 
@@ -59,7 +59,7 @@
         {{ purchase.category }}
       </mat-cell>
 
-      <mat-footer-cell *matFooterCellDef>{{ getTotal() | currency }}</mat-footer-cell>
+      <mat-footer-cell *matFooterCellDef></mat-footer-cell>
 
     </ng-container>
 
@@ -90,9 +90,9 @@
 
 
   </mat-table>
+</section>
 
-
-  <div *ngIf="selectedPurchase" class="editArea">
+  <section *ngIf="selectedPurchase" class="editArea form">
     <h2>Dados de Compra</h2>
 
     <mat-form-field class="formField" appearance="standard" color="accent">
@@ -116,4 +116,4 @@
     <button class="button-aside" mat-raised-button color="basic" (click)="cancel()">
       CANCELAR
     </button>
-  </div>
+  </section>

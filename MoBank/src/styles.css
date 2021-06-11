@@ -64,3 +64,8 @@ mat-progress-bar {
 .bar mat-progress-bar {
   transform: rotateY(180deg);
 }
+
+.bar {
+  width: 90%;
+  margin: auto;
+}
