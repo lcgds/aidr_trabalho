@@ -1,2 +1,65 @@
 <h2>Relatório</h2>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident consequatur hic ratione repellat ab? Libero deserunt ipsam et temporibus animi, quisquam modi ratione voluptas fugit, quaerat accusantium, error ut a.</p>
+
+<section class="graphics">
+
+    <!-- Entradas -->
+    <mat-card class="graphic">
+        <mat-card-header>
+
+            <mat-icon mat-card-avatar>trending_up</mat-icon>
+            <mat-card-title>Total de entradas</mat-card-title>
+            <mat-card-subtitle>Conforme Remunerações</mat-card-subtitle>
+
+        </mat-card-header>
+
+        <mat-spinner mode="determinate" color="accent" value="75"></mat-spinner>
+
+        <mat-card-content>
+            <h3>75%</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="accent" routerLink="/payments">VERIFICAR</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <!-- Saídas -->
+    <mat-card class="graphic">
+        <mat-card-header>
+
+            <mat-icon mat-card-avatar>trending_up</mat-icon>
+            <mat-card-title>Total de Saídas</mat-card-title>
+            <mat-card-subtitle>Conforme Compras</mat-card-subtitle>
+
+        </mat-card-header>
+
+        <mat-spinner mode="determinate" value="25" color="warn"></mat-spinner>
+
+        <mat-card-content>
+            <h3>25%</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="warn" routerLink="/purchases">VERIFICAR</button>
+        </mat-card-actions>
+    </mat-card>
+
+</section>
+
+<!-- Saldo -->
+<mat-card class="bar">
+    <mat-card-header>
+
+        <mat-icon mat-card-avatar>attach_money</mat-icon>
+        <mat-card-title>Saldo</mat-card-title>
+        <mat-card-subtitle>Conforme Remunerações e Compras</mat-card-subtitle>
+
+    </mat-card-header>
+
+    <mat-progress-bar color="primary" value="75"></mat-progress-bar>
+
+    <mat-card-content>
+        <h3>R$ 500</h3>
+    </mat-card-content>
+</mat-card>
