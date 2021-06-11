@@ -15,7 +15,7 @@ import { Confirmation } from 'src/app/views/dialogs/confirm/confirmation';
 export class PurchasesComponent implements OnInit {
 
   purchases = new Array<Purchase>(); //ou purchases = new Purchase[];
-  columns = ['name', 'value', 'category','actions'];
+  columns = ['id', 'name', 'value', 'category','actions'];
   
   selectedPurchase?: Purchase = undefined;
   inserting = false;
@@ -103,7 +103,7 @@ export class PurchasesComponent implements OnInit {
     this.selectedPurchase = {
       id: undefined,
       name: '',
-      value: 0,
+      value: 10,
       category: ''
     };
   }
@@ -127,6 +127,8 @@ export class PurchasesComponent implements OnInit {
   remove(id: number){
     this.purchaseService.remove(id).subscribe(() =>{
       this.list;
+      this.getTotal();
+      this.list();
     }, 
     error => {
       this.handleServiceError(error);

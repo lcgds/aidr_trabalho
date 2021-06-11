@@ -1,19 +1,19 @@
-.formField{
-	width: 100%;
+table {
+    width: 100%;
 }
 
-.btnAction{
-	margin-left: 10px;
+mat-footer-row {
+    font-weight: bold;
 }
 
-.btn {
-	width: 100px;
+button.button-aside {
+    margin-left: 1rem;
 }
 
 .fabAdd{
 	position: fixed;
-	right: 60px;
-	bottom: 32px;
+    bottom: 24px;
+    right: 24px;
 }
 
 .editArea{

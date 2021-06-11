@@ -1,98 +1,119 @@
 <h2>Compras</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident consequatur hic ratione repellat ab? Libero deserunt ipsam et temporibus animi, quisquam modi ratione voluptas fugit, quaerat accusantium, error ut a.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident consequatur hic ratione repellat ab? Libero
+  deserunt ipsam et temporibus animi, quisquam modi ratione voluptas fugit, quaerat accusantium, error ut a.</p>
 
 <button mat-fab color="primary" class="fabAdd" (click)="create()">
-	<mat-icon>add</mat-icon>
+  <mat-icon>add</mat-icon>
 </button>
 
 <div>
-	 <mat-table [dataSource]="purchases">
-		
-		<ng-container matColumnDef="name">
-			
-			<mat-header-cell *matHeaderCellDef>
-				Nome
-			</mat-header-cell>
+  <mat-table [dataSource]="purchases">
 
-			
-			<mat-cell *matCellDef="let purchase">
-				{{purchase.name}}	
-			</mat-cell>
-		</ng-container>
+    <ng-container matColumnDef="id">
+
+      <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+
+      <mat-cell *matCellDef="let purchase">
+        {{ purchase.id }}
+      </mat-cell>
+
+      <mat-footer-cell *matFooterCellDef>Total</mat-footer-cell>
+
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+
+      <mat-header-cell *matHeaderCellDef>
+        Nome
+      </mat-header-cell>
+
+      <mat-cell *matCellDef="let purchase">
+        {{ purchase.name }}
+      </mat-cell>
+
+      <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+
+    </ng-container>
+
+    <ng-container matColumnDef="value">
+
+      <mat-header-cell *matHeaderCellDef>
+        Preço
+      </mat-header-cell>
+
+      <mat-cell *matCellDef="let purchase">
+        {{ purchase.value | currency }}
+      </mat-cell>
+
+      <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+
+    </ng-container>
+
+    <ng-container matColumnDef="category">
+
+      <mat-header-cell *matHeaderCellDef>
+        Categoria
+      </mat-header-cell>
+
+      <mat-cell *matCellDef="let purchase">
+        {{ purchase.category }}
+      </mat-cell>
+
+      <mat-footer-cell *matFooterCellDef>{{ getTotal() | currency }}</mat-footer-cell>
+
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+
+      <mat-header-cell *matHeaderCellDef>
+        Ações
+      </mat-header-cell>
+
+      <mat-cell *matCellDef="let purchase">
+        <button mat-icon-button (click)="select(purchase)">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button mat-icon-button color="warn" (click)="confirm(purchase.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+
+      <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columns"></mat-row>
+    <mat-footer-row *matFooterRowDef="columns"></mat-footer-row>
 
 
-		<ng-container matColumnDef="value">
-			
-			<mat-header-cell *matHeaderCellDef>
-				Preço
-			</mat-header-cell>
 
-			
-			<mat-cell *matCellDef="let purchase">
-				{{purchase.value}}	
-			</mat-cell>
-		</ng-container>
-
-		<ng-container matColumnDef="category">
-			
-			<mat-header-cell *matHeaderCellDef>
-				Categoria
-			</mat-header-cell>
-
-			
-			<mat-cell *matCellDef="let purchase">
-				{{purchase.category}}	
-			</mat-cell>
-			<div mat-footer-cell *matFooterCellDef>{{ getTotal() | currency}}</div>
-		</ng-container>
-
-		<ng-container matColumnDef="actions">
-			
-			<mat-header-cell *matHeaderCellDef>
-				Ações
-			</mat-header-cell>
-
-			
-			<mat-cell *matCellDef="let purchase">
-				<button mat-button (click)="select(purchase)">
-					<mat-icon>edit</mat-icon>
-				</button>
-
-				<button mat-button color="warn" (click)="confirm(purchase.id)">
-					<mat-icon>remove_circle</mat-icon>
-				</button>
-
-			</mat-cell>
-		</ng-container>
-
-		<mat-header-row *matHeaderRowDef="columns">
-			<mat-row *matRowDef="let row; columns: columns"></mat-row>
-		</mat-header-row>
+  </mat-table>
 
 
-	</mat-table>
+  <div *ngIf="selectedPurchase" class="editArea">
+    <h2>Dados de Compra</h2>
 
-				
-<div *ngIf="selectedPurchase" class="editArea">
-	<h2>Dados de Compra</h2>
+    <mat-form-field class="formField" appearance="standard" color="accent">
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="selectedPurchase.name">
+    </mat-form-field><br>
 
-	<mat-form-field class="formField">
-		<mat-label>Nome</mat-label>
-		<input matInput [(ngModel)]="selectedPurchase.name">
-	</mat-form-field>
+    <mat-form-field class="formField" appearance="standard" color="accent">
+      <mat-label>Preço</mat-label>
+      <input matInput type="number" [(ngModel)]="selectedPurchase.value">
+    </mat-form-field><br>
 
-	<mat-form-field class="formField">
-		<mat-label>Preço</mat-label>
-		<input matInput type="number" [(ngModel)]="selectedPurchase.value">
-	</mat-form-field>
+    <mat-form-field class="formField" appearance="standard" color="accent">
+      <mat-label>Categoria</mat-label>
+      <input matInput [(ngModel)]="selectedPurchase.category">
+    </mat-form-field><br><br>
 
-	<mat-form-field class="formField">
-		<mat-label>Categoria</mat-label>
-		<input matInput [(ngModel)]="selectedPurchase.category">
-	</mat-form-field>
-
-	<br><br>
-
-	<button mat-raised-button color="accent" class="btn" (click)="cancel()">Cancelar</button>
-	<button mat-raised-button color="primary" class="btn btnAction" (click)="save()">Salvar</button>
-</div>
+    <button mat-raised-button color="primary" (click)="save()">
+      SALVAR
+    </button>
+    <button class="button-aside" mat-raised-button color="basic" (click)="cancel()">
+      CANCELAR
+    </button>
+  </div>
